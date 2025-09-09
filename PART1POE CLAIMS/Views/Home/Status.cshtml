@@ -1,0 +1,269 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Program Coordinator";
+}
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: #2c2f33;
+        min-height: 100vh;
+    }
+
+    #wrapper {
+        display: flex;
+        min-height: 100vh;
+    }
+
+
+    /* Main Content Area */
+    #main-content {
+        flex-grow: 1;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Form Container */
+    #Personal-container {
+        width: 90%;
+        max-width: 800px;
+        margin-bottom: 20px;
+    }
+
+    #Personal {
+        margin-top: 30px;
+        display: grid;
+        background-color: #343a40;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #Personal h3{
+    margin:0 auto;
+    color:#fff;
+    }
+
+        #Personal p {
+            margin: 0 auto;
+            color: #fff;
+        }
+
+    #PersonalVER {
+        margin-top: 30px;
+        display: grid;
+        background-color: #343a40;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #Personal1 {
+        margin-top: 30px;
+        display: grid;
+        background-color: #343a40;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form h3 {
+        margin-top: 0px;
+        color: #e5383b;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    form label {
+        display: block;
+        font-weight: 600;
+        color: #ced4da;
+        margin-top: 10px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 8px;
+        border: 0px solid #ced4da;
+        border-radius: 4px;
+        margin-top: 5px;
+        background: #495057;
+        color: #fff;
+    }
+
+    #btn-container button {
+        width: 90%;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    #btn button {
+        background-color: #212529;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 200px;
+    }
+
+        #btn button:hover {
+            background-color: #ced4da;
+            color: #212529;
+        }
+
+    table {
+        width: 90%;
+        max-width: 800px;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid #ced4da;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+        color: #fff;
+    }
+
+    th {
+        background-color: #212529;
+    }
+
+    tr:nth-child(even) {
+        background-color: #495057;
+    }
+
+    #claims-form button {
+        background-color: #a4161a;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 230px;
+        margin-left: 260px;
+        margin-top: 20px;
+        display: block;
+    }
+
+    #btn-personal {
+        background-color: #a4161a;
+        color: #fff;
+        padding: 19px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 250px;
+        margin-left: 120px;
+        margin-top: 20px;
+    }
+
+    .ph {
+        margin-left: 40px;
+        font-size: 35px;
+        vertical-align: middle;
+        color: #e5383b;
+    }
+
+    .ph-currency-circle-dollar {
+        margin-left: 30px;
+    }
+
+    .ph-info {
+        margin-left: 10px;
+    }
+
+    .ph-check-circle {
+        margin-left: 77px;
+    }
+
+    .ph-check-square {
+        margin-left: 60px;
+    }
+
+    .ph-folder-open {
+        margin-right: 13px;
+        font-size: 25px;
+        color: #fff;
+    }
+
+    }
+
+
+</style>
+
+<div id="wrapper">
+    <div id="main-content">
+        <div id="Personal-container">
+          
+            <div id="Personal">
+               <h3>PENDING</h3>
+                   <p>10</p>
+                <h3>DECLINE</h3>
+                    <p>10</p>
+                <h3>APPROVE</h3>
+                    <p>10</p>
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>subject Code</th>
+                <th>Module Code</th>
+                <th>Phase</th>
+                <th>Total</th>
+                <th>Rate</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Claims Number</th>
+                <th>DOCUMENTS</th>
+            </tr>
+            <tr>
+                <td>PRG001</td>
+                <td>MOD123</td>
+                <td>Phase </td>
+                <td>40</td>
+                <td>$50/hr</td>
+                <td>2000</td>
+                <td>6777</td>
+                <td>67587</td>
+                <td>
+                PENDING
+                </td>
+                <td>10AD</td>
+                <td><button>view</button></td>
+           
+
+            </tr>
+        </table>
+    </div>
+</div>

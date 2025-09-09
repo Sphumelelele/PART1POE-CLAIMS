@@ -1,0 +1,303 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Program Coordinator";
+}
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: #2c2f33;
+        min-height: 100vh;
+    }
+
+    #wrapper {
+        display: flex;
+        min-height: 100vh;
+    }
+
+
+    /* Main Content Area */
+    #main-content {
+        flex-grow: 1;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Form Container */
+    #Personal-container {
+        width: 90%;
+        max-width: 800px;
+        margin-bottom: 20px;
+    }
+
+    #Personal {
+        margin-top: 30px;
+        display: grid;
+        background-color: #343a40;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #PersonalVER {
+        margin-top: 30px;
+        display: grid;
+        background-color: #343a40;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #Personal1 {
+        margin-top: 30px;
+        display: grid;
+        background-color: #343a40;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form h3 {
+        margin-top: 0px;
+        color: #e5383b;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    form label {
+        display: block;
+        font-weight: 600;
+        color: #ced4da;
+        margin-top: 10px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 8px;
+        border: 0px solid #ced4da;
+        border-radius: 4px;
+        margin-top: 5px;
+        background: #495057;
+        color: #fff;
+    }
+
+    #btn-container button {
+        width: 90%;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    #btn button {
+        background-color: #212529;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 200px;
+    }
+
+        #btn button:hover {
+            background-color: #ced4da;
+            color: #212529;
+        }
+
+    table {
+        width: 90%;
+        max-width: 800px;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid #ced4da;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: left;
+        color: #fff;
+    }
+
+    th {
+        background-color: #212529;
+    }
+
+    tr:nth-child(even) {
+        background-color: #495057;
+    }
+
+    #claims-form button {
+        background-color: #a4161a;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 230px;
+        margin-left: 260px;
+        margin-top: 20px;
+        display: block;
+    }
+
+    #btn-personal {
+        background-color: #a4161a;
+        color: #fff;
+        padding: 19px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 250px;
+        margin-left: 120px;
+        margin-top: 20px;
+    }
+
+    .ph {
+        margin-left: 40px;
+        font-size: 35px;
+        vertical-align: middle;
+        color: #e5383b;
+    }
+
+    .ph-currency-circle-dollar {
+        margin-left: 30px;
+    }
+
+    .ph-info {
+        margin-left: 10px;
+    }
+
+    .ph-check-circle {
+        margin-left: 77px;
+    }
+
+    .ph-check-square {
+        margin-left: 60px;
+    }
+
+    .ph-folder-open {
+        margin-right: 13px;
+        font-size: 25px;
+        color: #fff;
+    }
+
+    }
+    /* Style the datalist input */
+    input[list] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        background-color: #495057;
+        color: #fff;
+        font-size: 15px;
+        transition: all 0.2s ease-in-out;
+    }
+
+        input[list]:focus {
+            outline: none;
+            background-color: #6c757d;
+            box-shadow: 0 0 5px rgba(229, 56, 59, 0.8); /* red glow */
+        }
+
+        /* Placeholder styling */
+        input[list]::placeholder {
+            color: #adb5bd;
+            font-style: italic;
+        }
+
+    /* Optional: if you want dropdown-like styling in some browsers */
+    datalist option {
+        background: #343a40;
+        color: #fff;
+        padding: 5px;
+    }
+
+    #docSubmit {
+        background-color: #212529;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 120px;
+    }
+
+</style>
+
+    <div id="wrapper">
+        <div id="main-content">
+            <div id="Personal-container">
+                <div id="Personal">
+
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>subject Code</th>
+                    <th>Module Code</th>
+                    <th>Phase</th>
+                    <th>Total</th>
+                    <th>Rate</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>DOCUMENTS</th>
+                    <th>Claims_Number</th>
+                </tr>
+                <tr>
+                    <td>PRG001</td>
+                    <td>MOD123</td>
+                    <td>Phase </td>
+                    <td>40</td>
+                    <td>$50/hr</td>
+                    <td>2000</td>
+                    <td>6777</td>
+                <td>7897</td>
+                    
+                <td>
+                    <input list="browsers" name="browser">
+
+                    <datalist id="browsers">
+                        @removeTagHelper "Microsoft.AspNetCore.Mvc.TagHelpers.OptionTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers"
+
+                        <option value="Approve">
+                        <option value="Denied">
+                    </datalist>
+                    <input id="docSubmit" type="submit">
+                </td>
+                <td><button>View</button></td>
+                   
+                <td>A10AM</td>
+
+                </tr>
+            </table>
+        </div>
+</div>
